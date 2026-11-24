@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- PASO 1: el navegador usa el ancho real del celular. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro guardado | NutriApp</title>
+  <!-- PASO 2: conectar este HTML con el CSS compartido. -->
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- Icono de la pestaña del navegador. -->
+  <link rel="icon" type="image/svg+xml" href="iconos/favicon.svg">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<!-- ===================================================
+     ESTRUCTURA (Integrante 4): header fijo con position: sticky
+     =================================================== -->
+<header class="cabecera">
+  <div class="contenedor barra">
+    <a class="marca" href="index.html"><img src="iconos/favicon.svg" alt="" width="40" height="40">NutriApp</a>
+    <!-- Menú horizontal con Flexbox -->
+        <button type="button" class="btn-hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-principal">
+      <span class="linea"></span>
+      <span class="linea"></span>
+      <span class="linea"></span>
+    </button>
+    <nav id="menu-principal" class="nav-principal" aria-label="Navegación principal">
+      <ul class="menu">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li>
+          <!-- details abre el submenú con clic, Enter o toque; no necesita JS. -->
+          <details class="desplegable">
+            <summary>Funciones</summary>
+            <!-- Menú vertical desplegable: una opción por HU -->
+            <ul class="submenu">
+              <li><a href="index.html#voz">🎤 Registro multimodal (Voz/Foto)</a></li>
+              <li><a href="index.html#hierro">Alimentos con hierro</a></li>
+              <li><a href="index.html#progreso">Mi progreso</a></li>
+              <li><a href="index.html#detalle">Detalle de alimento</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="index.html#equipo">Equipo</a></li>
+        <li><a href="recursos.html">Video y guía</a></li>
+        <li><a class="boton boton-menu" href="index.html#descargar">Muy pronto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Aviso global: esta web es la presentación de la app; las funciones son simuladores. -->
+<p class="aviso-sim">🧪 Estás en el <strong>simulador web</strong> de NutriApp: prueba las funciones sin registrarte. Nada se guarda. <a href="index.html#descargar">La app llega muy pronto →</a></p>
+
+<!-- Pantalla fija: final del recorrido de prueba -->
+<main id="contenido" class="contenedor seccion">
+  <section class="confirmacion" aria-labelledby="confirmado">
+    <div class="check" aria-hidden="true">✓</div>
+    <p class="etiqueta">Fin del simulador</p>
+    <h1 id="confirmado">¡Listo! Así se guardará tu registro en la app.</h1>
+    <p>En la app NutriApp, los alimentos se añadirán a tu diario del día y tu progreso se actualizará al instante. La app está en fase de producción: ¡llega muy pronto!</p>
+    <p class="alerta">Este es un mensaje fijo de prueba. No se guardó ningún dato, no se procesó audio y tu progreso no cambió.</p>
+    <h2>¿Quieres seguir probando?</h2>
+    <a class="boton" href="index.html#voz">Registrar otra comida</a>
+    <a class="enlace" href="index.html#progreso">Ver mi progreso</a>
+    <a class="enlace" href="index.html#descargar">¿Cuándo sale la app?</a>
+  </section>
+</main>
+
+<!-- ESTRUCTURA (Integrante 4): pie compartido -->
+<footer class="pie">
+  <div class="contenedor">
+    <p><strong>NutriApp</strong> · Tu nutrición del día, simple y a tu medida.</p>
+    <p>Proyecto académico vinculado al ODS 3: Salud y bienestar. La app está en fase de producción: ¡espérala muy pronto!</p>
+    <p>© 2026 NutriApp – Grupo 2 · HCI for UX Design (UPC) · Simulación educativa · <a href="FUENTES.txt">Créditos de recursos</a></p>
+  </div>
+</footer>
+</body>
+</html>

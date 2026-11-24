@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="Arial, sans-serif">
+  <rect width="400" height="300" fill="#10161d"/>
+  <circle cx="330" cy="60" r="90" fill="#22e39b" opacity=".08"/>
+  <rect x="120" y="18" width="160" height="300" rx="26" fill="#0b0f14" stroke="#26313c" stroke-width="3"/>
+  <text x="138" y="50" fill="#e8edf2" font-size="13" font-weight="bold">Mi Plan de hoy</text>
+  <text x="138" y="66" fill="#9aa7b4" font-size="8">Martes, 20 de octubre</text>
+  <circle cx="200" cy="120" r="38" fill="none" stroke="#26313c" stroke-width="10"/>
+  <circle cx="200" cy="120" r="38" fill="none" stroke="#22e39b" stroke-width="10" stroke-dasharray="97 239" transform="rotate(-90 200 120)" stroke-linecap="round"/>
+  <text x="200" y="118" fill="#e8edf2" font-size="14" font-weight="bold" text-anchor="middle">899</text>
+  <text x="200" y="132" fill="#9aa7b4" font-size="7" text-anchor="middle">de 2200 kcal</text>
+  <rect x="138" y="176" width="124" height="6" rx="3" fill="#26313c"/><rect x="138" y="176" width="68" height="6" rx="3" fill="#22e39b"/>
+  <rect x="138" y="190" width="124" height="6" rx="3" fill="#26313c"/><rect x="138" y="190" width="50" height="6" rx="3" fill="#3b9cff"/>
+  <rect x="138" y="204" width="124" height="6" rx="3" fill="#26313c"/><rect x="138" y="204" width="35" height="6" rx="3" fill="#f5a524"/>
+  <rect x="138" y="222" width="124" height="34" rx="8" fill="#141a21"/>
+  <text x="146" y="243" fill="#e8edf2" font-size="8">Desayuno · 320 kcal</text>
+  <circle cx="200" cy="282" r="20" fill="#22e39b"/>
+  <rect x="195" y="270" width="10" height="16" rx="5" fill="#0b0f14"/>
+  <path d="M190 282a10 10 0 0 0 20 0" stroke="#0b0f14" stroke-width="2.5" fill="none"/>
+  <rect x="30" y="200" width="78" height="40" rx="10" fill="#161d26" stroke="#26313c"/>
+  <text x="40" y="218" fill="#9aa7b4" font-size="8">Proteínas</text><text x="40" y="232" fill="#22e39b" font-size="11" font-weight="bold">77 / 140 g</text>
+  <rect x="292" y="140" width="84" height="40" rx="10" fill="#161d26" stroke="#26313c"/>
+  <text x="302" y="158" fill="#9aa7b4" font-size="8">Agua</text><text x="302" y="172" fill="#3b9cff" font-size="11" font-weight="bold">3 / 8 vasos</text>
+</svg>

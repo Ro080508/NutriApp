@@ -1,0 +1,9 @@
+NutriApp – Grupo 2 · Créditos de recursos
+Video: "ODS en 3, 2, 1: 3 Salud y Bienestar" – Pacto Global Red Colombia (YouTube).
+https://www.youtube.com/watch?v=0_0KYIEARh8
+Se inserta con iframe desde YouTube; no se descarga ni se redistribuye.
+Favicon, dashboard.svg y plato.svg: ilustraciones SVG originales hechas para este proyecto.
+salmon.jpg: imagen del proyecto (mockup del equipo).
+Valores de hierro: aproximados y referenciales con fines educativos. Verificar con las
+Tablas Peruanas de Composición de Alimentos (INS/CENAN) antes de presentar.
+Base del código: ejemplo ACME del curso HCI for UX Design (UPC), Semana 10.

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | NutriApp · Asistente Nutricional con IA</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" type="image/svg+xml" href="iconos/favicon.svg">
+  <script src="js/app.js" defer></script>
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<!-- ===================================================
+     ESTRUCTURA (Integrante 4): header fijo consistente
+     =================================================== -->
+<header class="cabecera">
+  <div class="contenedor barra">
+    <a class="marca" href="index.html"><img src="iconos/favicon.svg" alt="" width="40" height="40">NutriApp</a>
+        <button type="button" class="btn-hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-principal">
+      <span class="linea"></span>
+      <span class="linea"></span>
+      <span class="linea"></span>
+    </button>
+    <nav id="menu-principal" class="nav-principal" aria-label="Navegación principal">
+      <ul class="menu">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li>
+          <details class="desplegable">
+            <summary>Funciones</summary>
+            <ul class="submenu">
+              <li><a href="index.html#voz">🎤 Registro multimodal (Voz/Foto)</a></li>
+              <li><a href="index.html#hierro">🥩 Alimentos con hierro</a></li>
+              <li><a href="index.html#progreso">📊 Mi progreso y corrección</a></li>
+              <li><a href="index.html#detalle">🍽️ Detalle de alimento</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="index.html#equipo">Equipo</a></li>
+        <li><a href="recursos.html">Video y guía</a></li>
+        <li><button type="button" class="boton boton-menu" id="btn-abrir-nutribot-nav">🤖 Asistente IA</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<p class="aviso-sim">🧪 Estás en el <strong>simulador interactivo</strong> de NutriApp: los registros por voz, foto y recomendaciones actualizan tu progreso en tiempo real. <a href="index.html#descargar">La app llega muy pronto →</a></p>
+
+<main id="contenido">
+
+  <!-- ===================================================
+       INICIO (Estructura · Integrante 4)
+       =================================================== -->
+  <section id="inicio" class="hero contenedor dos-columnas" aria-labelledby="titulo">
+    <div>
+      <p class="etiqueta">App de nutrición · ODS 3 · Salud y bienestar</p>
+      <h1 id="titulo">Comer bien no debería <span>quitarte tiempo.</span></h1>
+      <p>NutriApp combina <strong>reconocimiento de voz, escaneo de platos por imagen y un asistente conversacional</strong> para registrar tus comidas en segundos, prevenir la anemia y darte recomendaciones personalizadas.</p>
+      <a class="microfono" href="#voz">🎤 Registrar por voz o foto</a>
+      <button type="button" class="boton boton-sec" id="btn-abrir-nutribot-hero">🤖 Orientarme con IA</button>
+      <p class="nota" style="margin-top: 0.6rem;">🛡️ <strong>Transparencia y privacidad:</strong> tú siempre revisas y confirmas antes de guardar. El audio y las fotos no se almacenan.</p>
+    </div>
+    <figure class="postal">
+      <img class="foto" src="imagenes/dashboard.svg" alt="Pantalla de NutriApp con calorías del día, macronutrientes y botón de micrófono" width="400" height="300">
+      <figcaption>Vista previa de la app · <span id="hero-resumen-kcal">Mi Plan de hoy: 899 de 2,200 kcal.</span></figcaption>
+    </figure>
+  </section>
+
+  <!-- FUNCIONES (Estructura) -->
+  <section id="funciones" class="seccion contenedor" aria-labelledby="funciones-titulo">
+    <p class="etiqueta">Funciones inteligentes conectadas</p>
+    <h2 id="funciones-titulo">Todo lo que podrás hacer con NutriApp.</h2>
+    <p class="nota">Cada módulo está conectado a tu diario del día para evitar pasos repetitivos.</p>
+    <div class="funciones">
+      <article class="tarjeta"><span class="chip-sim">🎤 + 📷 Multimodal</span><span class="icono" aria-hidden="true">🎙️</span><h3>Dictado y escáner IA</h3><p>Habla o toma una foto de tu plato; la IA estima porciones y te deja editar.</p><a href="#voz">Probar ahora →</a></article>
+      <article class="tarjeta"><span class="chip-sim">🥩 Prevención anemia</span><span class="icono" aria-hidden="true">🥗</span><h3>Alimentos con hierro</h3><p>Filtra por preferencias y añade alimentos ricos en hierro en 1 clic.</p><a href="#hierro">Explorar →</a></article>
+      <article class="tarjeta"><span class="chip-sim">📊 Tiempo real</span><span class="icono" aria-hidden="true">📈</span><h3>Mi progreso y ajuste</h3><p>Visualiza macros, recibe alertas de déficit y corrige sin calcular kcal.</p><a href="#progreso">Ver progreso →</a></article>
+      <article class="tarjeta"><span class="chip-sim">🤖 Copiloto HAX</span><span class="icono" aria-hidden="true">💬</span><h3>Asistente NutriBot</h3><p>Pide ayuda en lenguaje natural para configurar metas o corregir platos.</p><a href="#progreso" id="link-tarjeta-bot">Abrir asistente →</a></article>
+    </div>
+  </section>
+
+  <!-- NOSOTROS (Estructura) -->
+  <section id="nosotros" class="seccion fondo">
+    <div class="contenedor dos-columnas">
+      <img class="foto" src="imagenes/plato.svg" alt="Plato dividido en cuatro grupos de alimentos: proteínas, carbohidratos, verduras y frutas" width="400" height="300" loading="lazy">
+      <div>
+        <p class="etiqueta">Quiénes somos</p>
+        <h2>Una app que acompaña tus comidas del día.</h2>
+        <p>NutriApp nace para eliminar la fricción de escribir cada ingrediente a mano y calcular gramos. Incorporamos <strong>interfaces multimodales e IA explicable</strong> para que cualquier persona pueda llevar su control nutricional sin conocimientos técnicos.</p>
+        <h3>Nuestra propuesta</h3>
+        <p>Registro por voz o foto con confirmación del usuario, recomendaciones personalizadas para prevenir la anemia y recuperación simple ante errores. Así contribuimos al <strong>ODS 3: Salud y bienestar</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       H01 · REGISTRO MULTIMODAL DE COMIDAS (VOZ + IMAGEN + TEXTO)
+       (Integrante 2 · Mejora SUS Q2, Q4, Q8 y Principios HAX)
+       =================================================== -->
+  <section id="voz" class="seccion fondo">
+    <div class="contenedor">
+      <span class="hu">H01 · Registro multimodal (Voz, Imagen y Texto)</span>
+      <p class="sim"><strong>🤖 IA con Control del Usuario:</strong> elige cómo ingresar tu comida. La IA extrae alimentos y calorías, muestra su nivel de confianza y espera tu confirmación antes de añadirla a <em>Mi Progreso</em>.</p>
+      <h2>Registra lo que comiste sin escribir todo a mano.</h2>
+
+      <!-- Selector de modalidad (Control del usuario - HAX) -->
+      <div class="tabs-multimodal" role="tablist" aria-label="Modo de ingreso de comida">
+        <button type="button" class="tab-btn activo" data-tab="panel-voz" role="tab" aria-selected="true">🎤 Dictado por voz</button>
+        <button type="button" class="tab-btn" data-tab="panel-foto" role="tab" aria-selected="false">📷 Escaneo de plato (IA Visión)</button>
+        <button type="button" class="tab-btn" data-tab="panel-manual" role="tab" aria-selected="false">⌨️ Ingreso rápido asistido</button>
+      </div>
+
+      <!-- PANEL 1: RECONOCIMIENTO DE VOZ (Real Web Speech API + Ejemplos guiados) -->
+      <div id="panel-voz" class="panel-multimodal activo">
+        <div class="tarjeta" style="margin-bottom: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.7rem;">
+            <div>
+              <span class="badge-ia">🎙️ Reconocimiento de voz activo</span>
+              <p class="nota" style="margin-top: 0.35rem; margin-bottom: 0;">Pulsa el botón para hablar con tu micrófono o selecciona una frase de prueba rápida.</p>
+            </div>
+            <button type="button" id="btn-microfono-real" class="microfono" style="border: none; cursor: pointer;">🎤 Hablar ahora</button>
+          </div>
+          <p id="estado-voz-real" class="nota" style="margin-top: 0.6rem; margin-bottom: 0;"></p>
+        </div>
+
+        <fieldset class="orientador">
+          <legend>🎤 Frases de prueba rápidas (o dictado en vivo)</legend>
+          <input type="radio" name="dictado" id="d-huevos" checked><label for="d-huevos">“Dos huevos revueltos con una rebanada de pan”</label>
+          <input type="radio" name="dictado" id="d-avena"><label for="d-avena">“Avena con canela” (Prueba de corrección de error)</label>
+          <input type="radio" name="dictado" id="d-pollo"><label for="d-pollo">“Pollo con arroz integral”</label>
+
+          <div class="resultados">
+            <!-- Escenario 1: Alta confianza -->
+            <div class="respuesta r-huevos">
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <span class="badge-confianza">✓ Confianza IA: 96% · Alimentos emparejados</span>
+                <span class="nota">Categoría detectada: Desayuno</span>
+              </div>
+              <h3>Revisa y confirma antes de guardar</h3>
+              <form class="formulario form-registro-directo" data-categoria="Desayuno" data-kcal="236" data-pro="16" data-carb="18" data-gra="11">
+                <div class="fila">
+                  <div class="campo"><label for="h1a">Alimento 1</label><input id="h1a" type="text" value="Huevo revuelto (2 unid.)" required></div>
+                  <div class="campo"><label for="h1b">Gramos est.</label><input id="h1b" type="number" value="120" min="1" max="1000" required></div>
+                </div>
+                <div class="fila">
+                  <div class="campo"><label for="h1c">Alimento 2</label><input id="h1c" type="text" value="Pan integral (1 rebanada)" required></div>
+                  <div class="campo"><label for="h1d">Gramos est.</label><input id="h1d" type="number" value="35" min="1" max="1000" required></div>
+                </div>
+                <p class="nota">Total calculado automáticamente: <strong>236 kcal</strong> (16 g prot · 18 g carb · 11 g grasas)</p>
+                <button type="submit" class="boton">✓ Confirmar y añadir a Mi Progreso</button>
+              </form>
+            </div>
+
+            <!-- Escenario 2: Recuperación ante errores (HAX Error Recovery) -->
+            <div class="respuesta r-avena">
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <span class="badge-alerta">⚠️ Baja confianza fonética (62%) · Revisar palabra</span>
+                <span class="nota">Categoría detectada: Desayuno</span>
+              </div>
+              <h3>¿Dijiste “canela” o “panela”?</h3>
+              <p class="alerta">La IA detectó ambigüedad en el segundo ingrediente. Toca la opción correcta para corregir en 1 clic sin volver a dictar:</p>
+              <div class="chips-error" aria-label="Sugerencias rápidas de corrección">
+                <button type="button" class="chip-opcion" data-target="h2c" data-val="Canela molida" data-kcal-target="kcal-avena" data-new-kcal="155">✓ Canela molida (155 kcal)</button>
+                <button type="button" class="chip-opcion" data-target="h2c" data-val="Panela granulada" data-kcal-target="kcal-avena" data-new-kcal="185">Panela granulada (185 kcal)</button>
+                <button type="button" class="chip-opcion" data-target="h2c" data-val="Vainilla" data-kcal-target="kcal-avena" data-new-kcal="152">Vainilla (152 kcal)</button>
+              </div>
+              <form class="formulario form-registro-directo" id="form-avena-voz" data-categoria="Desayuno" data-kcal="185" data-pro="5" data-carb="32" data-gra="3">
+                <div class="fila">
+                  <div class="campo"><label for="h2a">Alimento 1</label><input id="h2a" type="text" value="Avena cocida" required></div>
+                  <div class="campo"><label for="h2b">Gramos</label><input id="h2b" type="number" value="150" min="1" max="1000" required></div>
+                </div>
+                <div class="fila">
+                  <div class="campo"><label for="h2c">Alimento 2 (resaltado para revisión)</label><input id="h2c" class="campo-dudoso" type="text" value="Panela" required></div>
+                  <div class="campo"><label for="h2d">Gramos</label><input id="h2d" type="number" value="5" min="1" max="1000" required></div>
+                </div>
+                <p class="nota">Total recalculado: <strong id="kcal-avena">185</strong> <strong>kcal</strong></p>
+                <button type="submit" class="boton">✓ Confirmar y añadir a Mi Progreso</button>
+              </form>
+            </div>
+
+            <!-- Escenario 3: Almuerzo -->
+            <div class="respuesta r-pollo">
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <span class="badge-confianza">✓ Confianza IA: 94% · Alimentos emparejados</span>
+                <span class="nota">Categoría detectada: Almuerzo</span>
+              </div>
+              <h3>Revisa y confirma antes de guardar</h3>
+              <form class="formulario form-registro-directo" data-categoria="Almuerzo" data-kcal="433" data-pro="50" data-carb="38" data-gra="7">
+                <div class="fila">
+                  <div class="campo"><label for="h3a">Alimento 1</label><input id="h3a" type="text" value="Pechuga de pollo a la plancha" required></div>
+                  <div class="campo"><label for="h3b">Gramos est.</label><input id="h3b" type="number" value="150" min="1" max="1000" required></div>
+                </div>
+                <div class="fila">
+                  <div class="campo"><label for="h3c">Alimento 2</label><input id="h3c" type="text" value="Arroz integral cocido" required></div>
+                  <div class="campo"><label for="h3d">Gramos est.</label><input id="h3d" type="number" value="150" min="1" max="1000" required></div>
+                </div>
+                <p class="nota">Total calculado automáticamente: <strong>433 kcal</strong> (50 g prot · 38 g carb · 7 g grasas)</p>
+                <button type="submit" class="boton">✓ Confirmar y añadir a Mi Progreso</button>
+              </form>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- PANEL 2: RECONOCIMIENTO DE IMÁGENES (IA Visión) -->
+      <div id="panel-foto" class="panel-multimodal">
+        <div class="formulario">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.8rem;">
+            <span class="badge-ia">📷 Visión por Computadora · Estimación de volumen</span>
+            <span class="nota">Privacidad: la imagen se procesa localmente y no se guarda</span>
+          </div>
+          <h3>Sube una foto de tu plato o prueba un escaneo de ejemplo</h3>
+          <p class="nota">La IA detecta los alimentos visibles y estima su peso en gramos para evitarte cálculos manuales.</p>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 0.8rem 0;">
+            <label class="boton" for="input-foto-plato" style="cursor: pointer;">📸 Seleccionar foto de comida</label>
+            <input type="file" id="input-foto-plato" accept="image/*" style="display: none;">
+            <button type="button" class="boton boton-ia" id="btn-simular-foto-sangrecita">🧪 Simular foto: Sangrecita con papa y limón</button>
+            <button type="button" class="boton boton-ia" id="btn-simular-foto-salmon">🧪 Simular foto: Salmón con ensalada</button>
+          </div>
+          <div id="resultado-escaneo-foto" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--borde);">
+            <span class="badge-confianza" id="foto-badge-confianza">✓ Detección visual: 91% de confianza</span>
+            <h4 id="foto-titulo-detectado" style="margin: 0.5rem 0;">Plato detectado</h4>
+            <p class="nota" id="foto-explicacion-ia">Estimación basada en área del plato estándar (24 cm).</p>
+            <form id="form-confirmar-foto" class="formulario" style="background: var(--fondo);">
+              <div class="fila">
+                <div class="campo"><label for="foto-alimento">Alimento detectado (editable)</label><input id="foto-alimento" type="text" required></div>
+                <div class="campo"><label for="foto-gramos">Gramos estimados</label><input id="foto-gramos" type="number" min="1" max="1500" required></div>
+              </div>
+              <p class="nota">Nutrientes estimados: <strong id="foto-resumen-nutrientes">0 kcal</strong></p>
+              <button type="submit" class="boton">✓ Confirmar y añadir a Mi Progreso</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 3: INGRESO RÁPIDO ASISTIDO (Fallback accesible) -->
+      <div id="panel-manual" class="panel-multimodal">
+        <form id="form-ingreso-rapido" class="formulario">
+          <span class="badge-confianza">⌨️ Autocompletado nutricional inteligente</span>
+          <h3 style="margin-top: 0.4rem;">Escribe el alimento y la porción; NutriApp calcula las calorías</h3>
+          <div class="fila-tres">
+            <div class="campo">
+              <label for="rapido-alimento">Alimento</label>
+              <input id="rapido-alimento" type="text" placeholder="Ej. Lentejas guisadas con ensalada" required>
+            </div>
+            <div class="campo">
+              <label for="rapido-gramos">Gramos</label>
+              <input id="rapido-gramos" type="number" value="200" min="10" max="1500" required>
+            </div>
+            <div class="campo">
+              <label for="rapido-categoria">Momento</label>
+              <select id="rapido-categoria">
+                <option>Desayuno</option>
+                <option selected>Almuerzo</option>
+                <option>Cena</option>
+                <option>Snack</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="boton">✓ Calcular y registrar en Mi Progreso</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       H02 · CONSULTAR ALIMENTOS RICOS EN HIERRO (Integrante 5)
+       Conectado directamente al diario (Soluciona Q5 SUS)
+       =================================================== -->
+  <section id="hierro" class="seccion contenedor">
+    <span class="hu">H02 · Consultar alimentos ricos en hierro</span>
+    <p class="sim"><strong>🥗 Integración directa:</strong> elige un grupo y añade cualquier alimento a tu progreso del día con un solo clic.</p>
+    <h2>Alimentos que te ayudan a prevenir la anemia.</h2>
+    <div class="dos-columnas">
+      <div>
+        <p>La anemia aparece cuando la sangre no tiene suficiente hemoglobina para llevar oxígeno. Incluir alimentos ricos en <strong>hierro</strong> y combinarlos con vitamina C mejora su absorción.</p>
+      </div>
+      <ul>
+        <li>El hierro hemínico (origen animal) se absorbe hasta 3 veces mejor.</li>
+        <li>Acompaña menestras y verduras con limón, naranja o tomate.</li>
+        <li>Evita tomar té o café inmediatamente después de comer.</li>
+      </ul>
+    </div>
+    <fieldset class="orientador">
+      <legend>Elige un grupo de alimentos</legend>
+      <input type="radio" name="grupo" id="g-animal" checked><label for="g-animal">Origen animal</label>
+      <input type="radio" name="grupo" id="g-legumbres"><label for="g-legumbres">Menestras y granos</label>
+      <input type="radio" name="grupo" id="g-verduras"><label for="g-verduras">Verduras</label>
+      <div class="resultados">
+        <div class="respuesta r-animal">
+          <h3>Los que más hierro aportan (Origen animal)</h3>
+          <div class="tabla-scroll"><table>
+            <caption>Hierro aproximado por 100 g</caption>
+            <thead><tr><th scope="col">Alimento</th><th scope="col">Hierro</th><th scope="col">Idea para tu comida</th><th scope="col">Acción rápida</th></tr></thead>
+            <tbody>
+              <tr><td>Sangrecita de pollo</td><td><strong>≈ 29 mg</strong></td><td>Saltado con cebolla y limón</td><td><button type="button" class="boton btn-add-hierro" style="padding: 0.35rem 0.75rem; font-size: 0.82rem;" data-nombre="Sangrecita de pollo (100g)" data-gramos="100" data-kcal="135" data-pro="22" data-carb="2" data-gra="4">+ Añadir</button></td></tr>
+              <tr><td>Bazo de res</td><td><strong>≈ 28 mg</strong></td><td>Guiso con papa y perejil</td><td><button type="button" class="boton btn-add-hierro" style="padding: 0.35rem 0.75rem; font-size: 0.82rem;" data-nombre="Bazo de res guisado (100g)" data-gramos="100" data-kcal="142" data-pro="24" data-carb="1" data-gra="4">+ Añadir</button></td></tr>
+              <tr><td>Hígado de pollo</td><td><strong>≈ 8 mg</strong></td><td>Hígado encebollado</td><td><button type="button" class="boton btn-add-hierro" style="padding: 0.35rem 0.75rem; font-size: 0.82rem;" data-nombre="Hígado de pollo (100g)" data-gramos="100" data-kcal="167" data-pro="24" data-carb="1" data-gra="6">+ Añadir</button></td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div class="respuesta r-legumbres">
+          <h3>Opciones vegetales para tu almuerzo</h3>
+          <div class="tabla-scroll"><table>
+            <caption>Hierro aproximado por 100 g</caption>
+            <thead><tr><th scope="col">Alimento</th><th scope="col">Hierro</th><th scope="col">Combínalo con</th><th scope="col">Acción rápida</th></tr></thead>
+            <tbody>
+              <tr><td>Lentejas</td><td><strong>≈ 7 mg</strong></td><td>Ensalada con limón</td><td><button type="button" class="boton btn-add-hierro" style="padding: 0.35rem 0.75rem; font-size: 0.82rem;" data-nombre="Lentejas con limón (150g)" data-gramos="150" data-kcal="175" data-pro="13" data-carb="30" data-gra="1">+ Añadir</button></td></tr>
+              <tr><td>Garbanzos</td><td><strong>≈ 6 mg</strong></td><td>Tomate y pimiento</td><td><button type="button" class="boton btn-add-hierro" style="padding: 0.35rem 0.75rem; font-size: 0.82rem;" data-nombre="Garbanzos guisados (150g)" data-gramos="150" data-kcal="210" data-pro="11" data-carb="35" data-gra="3">+ Añadir</button></td></tr>
+              <tr><td>Quinua</td><td><strong>≈ 5 mg</strong></td><td>Jugo de naranja natural</td><td><button type="button" class="boton btn-add-hierro" style="padding: 0.35rem 0.75rem; font-size: 0.82rem;" data-nombre="Quinua cocida (150g)" data-gramos="150" data-kcal="180" data-pro="7" data-carb="32" data-gra="3">+ Añadir</button></td></tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div class="respuesta r-verduras">
+          <h3>Verduras de hoja verde</h3>
+          <div class="tabla-scroll"><table>
+            <caption>Hierro aproximado por 100 g</caption>
+            <thead><tr><th scope="col">Alimento</th><th scope="col">Hierro</th><th scope="col">Combínalo con</th><th scope="col">Acción rápida</th></tr></thead>
+            <tbody>
+              <tr><td>Espinaca</td><td><strong>≈ 3 mg</strong></td><td>Jugo de limón</td><td><button type="button" class="boton btn-add-hierro" style="padding: 0.35rem 0.75rem; font-size: 0.82rem;" data-nombre="Ensalada de espinaca y limón (100g)" data-gramos="100" data-kcal="35" data-pro="3" data-carb="4" data-gra="0">+ Añadir</button></td></tr>
+              <tr><td>Acelga</td><td><strong>≈ 2 mg</strong></td><td>Huevo sancochado</td><td><button type="button" class="boton btn-add-hierro" style="padding: 0.35rem 0.75rem; font-size: 0.82rem;" data-nombre="Saltado de acelga (100g)" data-gramos="100" data-kcal="45" data-pro="2" data-carb="5" data-gra="2">+ Añadir</button></td></tr>
+              <tr><td>Brócoli</td><td><strong>≈ 1 mg</strong></td><td>Pimiento rojo</td><td><button type="button" class="boton btn-add-hierro" style="padding: 0.35rem 0.75rem; font-size: 0.82rem;" data-nombre="Brócoli al vapor (100g)" data-gramos="100" data-kcal="34" data-pro="3" data-carb="7" data-gra="0">+ Añadir</button></td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+    </fieldset>
+    <p class="nota">Valores referenciales educativos (INS/CENAN). Para un diagnóstico médico consulta a un profesional de salud.</p>
+  </section>
+
+  <!-- ===================================================
+       H03 · PROGRESO NUTRICIONAL, RECOMENDACIONES IA Y CORRECCIÓN
+       (Integrante 3 · Mejora SUS Q4, Q5, Q9)
+       =================================================== -->
+  <section id="progreso" class="seccion fondo">
+    <div class="contenedor">
+      <span class="hu">H03 · Progreso nutricional, recomendaciones IA y corrección</span>
+      <p class="sim"><strong>📊 Panel conectado:</strong> cualquier comida registrada por voz, foto o tabla actualiza tus indicadores aquí al instante.</p>
+      <h2>Tu progreso de hoy.</h2>
+
+      <!-- Tarjeta de Recomendación Personalizada Explicable (HAX Transparency + Personalization) -->
+      <div class="banner-recomendacion" id="caja-recomendacion-ia">
+        <div>
+          <span class="badge-ia">✨ Recomendación personalizada según tu déficit</span>
+          <h3 id="rec-titulo" style="margin-top: 0.4rem;">Te faltan 63 g de proteína y refuerzo de hierro hoy</h3>
+          <p id="rec-explicacion" class="nota" style="margin-bottom: 0;"><strong>¿Por qué?</strong> Tus comidas registradas suman 77 g de 140 g de proteína. Sugerimos <strong>Sangrecita de pollo saltada (100 g · 135 kcal · 29 mg hierro)</strong> para cubrir proteína y prevenir anemia.</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <button type="button" class="boton" id="btn-aceptar-recomendacion">+ Registrar sugerencia</button>
+          <button type="button" class="boton boton-sec" id="btn-cambiar-recomendacion">🔄 Otra opción (Vegetariana)</button>
+        </div>
+      </div>
+
+      <div class="resumen">
+        <article class="tarjeta"><p class="nota">Consumidas</p><p class="cifra">899 kcal</p><p class="nota">de 2,200 kcal</p></article>
+        <article class="tarjeta"><p class="nota">Restantes</p><p class="cifra">1,301 kcal</p><p class="nota">Te faltan 63 g de proteína</p></article>
+        <article class="tarjeta"><p class="nota">Peso actual</p><p class="cifra">74.5 kg</p><p class="nota">▼ −2.3 kg este mes</p></article>
+      </div>
+      <div class="dos-columnas" style="margin-top: 1.5rem;">
+        <div>
+          <h3>Macronutrientes del día</h3>
+          <div class="dato"><label for="m-pro"><span>Proteínas</span><span>77 / 140 g</span></label><meter id="m-pro" min="0" max="140" value="77">77 g</meter></div>
+          <div class="dato"><label for="m-carb"><span>Carbohidratos</span><span>100 / 250 g</span></label><meter id="m-carb" min="0" max="250" value="100">100 g</meter></div>
+          <div class="dato"><label for="m-gra"><span>Grasas</span><span>20 / 70 g</span></label><meter id="m-gra" min="0" max="70" value="20">20 g</meter></div>
+          <div class="dato"><label for="agua"><span>Agua</span><span>3 / 8 vasos</span></label><progress id="agua" max="8" value="3">3 de 8</progress></div>
+        </div>
+        <div>
+          <h3>Historial de peso (kg)</h3>
+          <ul class="barras" aria-label="Peso de los últimos 6 días">
+            <li><span style="height:90%"></span>D1</li>
+            <li><span style="height:84%"></span>D2</li>
+            <li><span style="height:78%"></span>D3</li>
+            <li><span style="height:72%"></span>D4</li>
+            <li><span style="height:66%"></span>D5</li>
+            <li><span style="height:60%"></span>D6</li>
+          </ul>
+          <p class="nota">76.2 → 74.5 kg en 6 días.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 1.5rem;">¿Registraste algo mal? Corrígelo aquí (con recálculo automático).</h3>
+      <fieldset class="orientador" id="seccion-correccion">
+        <legend>Comidas registradas hoy</legend>
+        <div id="lista-comidas-registradas"></div>
+
+        <!-- Formulario de edición asistida: recalcula calorías automáticamente al cambiar gramos -->
+        <form id="form-corregir-comida" class="formulario" style="display: none; margin-top: 1rem;">
+          <input type="hidden" id="edit-comida-id">
+          <p class="nota">💡 Al modificar los <strong>gramos</strong>, NutriApp recalcula las calorías automáticamente para que no tengas que calcularlas.</p>
+          <div class="fila-tres">
+            <div class="campo">
+              <label for="edit-nombre">Alimento</label>
+              <input id="edit-nombre" type="text" required>
+            </div>
+            <div class="campo">
+              <label for="edit-gramos">Gramos</label>
+              <input id="edit-gramos" type="number" min="1" max="2000" required>
+            </div>
+            <div class="campo">
+              <label for="edit-kcal">Calorías (auto-calculadas)</label>
+              <input id="edit-kcal" type="number" min="0" max="3000" required>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+            <button type="submit" class="boton">✓ Guardar Cambios</button>
+            <button type="button" id="btn-cancelar-edit" class="boton boton-sec">Cancelar</button>
+          </div>
+        </form>
+      </fieldset>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       H04 · DETALLE DE ALIMENTO: AJUSTAR PORCIÓN Y REGISTRAR
+       (Integrante 1: Juan Carlos Mendiola – U20251C132)
+       =================================================== -->
+  <section id="detalle" class="seccion contenedor">
+    <span class="hu">H04 · Detalle de alimento y registro de porción</span>
+    <p class="sim"><strong>🍽️ Registro conectado:</strong> selecciona una porción y regístrala directamente en tu diario del día.</p>
+    <h2>Salmón Atlántico Fresco</h2>
+    <div class="dos-columnas">
+      <figure class="postal">
+        <img class="foto" src="imagenes/salmon.jpg" alt="Ilustración de un filete de salmón" width="600" height="380" loading="lazy">
+        <figcaption><span class="hu">ALTA PROTEÍNA · OMEGA-3</span></figcaption>
+      </figure>
+      <fieldset class="orientador">
+        <legend>Ajusta la porción</legend>
+        <input type="radio" name="porcion" id="p100"><label for="p100">100 g</label>
+        <input type="radio" name="porcion" id="p150" checked><label for="p150">150 g</label>
+        <input type="radio" name="porcion" id="p200"><label for="p200">200 g</label>
+        <div class="resultados">
+          <div class="respuesta r-100">
+            <h3>Valores para 100 g · 208 kcal</h3>
+            <div class="dato"><label for="v1"><span>Proteínas</span><span>20 g</span></label><meter id="v1" min="0" max="40" value="20">20 g</meter></div>
+            <div class="dato"><label for="v2"><span>Grasas</span><span>13 g</span></label><meter id="v2" min="0" max="40" value="13">13 g</meter></div>
+            <div class="dato"><label for="v3"><span>Carbohidratos</span><span>0 g</span></label><meter id="v3" min="0" max="40" value="0">0 g</meter></div>
+          </div>
+          <div class="respuesta r-150">
+            <h3>Valores para 150 g · 312 kcal</h3>
+            <div class="dato"><label for="v4"><span>Proteínas</span><span>30 g</span></label><meter id="v4" min="0" max="40" value="30">30 g</meter></div>
+            <div class="dato"><label for="v5"><span>Grasas</span><span>19.5 g</span></label><meter id="v5" min="0" max="40" value="19.5">19.5 g</meter></div>
+            <div class="dato"><label for="v6"><span>Carbohidratos</span><span>0 g</span></label><meter id="v6" min="0" max="40" value="0">0 g</meter></div>
+          </div>
+          <div class="respuesta r-200">
+            <h3>Valores para 200 g · 416 kcal</h3>
+            <div class="dato"><label for="v7"><span>Proteínas</span><span>40 g</span></label><meter id="v7" min="0" max="40" value="40">40 g</meter></div>
+            <div class="dato"><label for="v8"><span>Grasas</span><span>26 g</span></label><meter id="v8" min="0" max="40" value="26">26 g</meter></div>
+            <div class="dato"><label for="v9"><span>Carbohidratos</span><span>0 g</span></label><meter id="v9" min="0" max="40" value="0">0 g</meter></div>
+          </div>
+          <form id="form-detalle-salmon" class="formulario">
+            <label for="comida">Registrar en</label>
+            <select id="comida" required>
+              <option value="">Elige una comida</option>
+              <option>Desayuno</option><option selected>Almuerzo</option><option>Cena</option><option>Snack</option>
+            </select>
+            <button type="submit" class="boton" style="margin-top: 0.75rem;">✓ Registrar en Mi Progreso</button>
+          </form>
+        </div>
+      </fieldset>
+    </div>
+  </section>
+
+  <!-- DESCARGA (Estructura) -->
+  <section id="descargar" class="seccion contenedor">
+    <div class="descarga">
+      <div>
+        <span class="chip-pronto">🚧 En fase de producción</span>
+        <h2>La app NutriApp llega muy pronto.</h2>
+        <p>Con la versión móvil tendrás <strong>reconocimiento de voz continuo, escáner con cámara en vivo y alertas inteligentes</strong> para cuidar tu alimentación cada día.</p>
+        <ul class="beneficios">
+          <li>Registra lo que comes en segundos hablando o tomando una foto.</li>
+          <li>Recibe orientación personalizada de NutriBot sin conocimientos técnicos.</li>
+          <li>Previene la anemia con sugerencias adaptadas a tus gustos.</li>
+        </ul>
+      </div>
+      <div class="tiendas" aria-label="Disponibilidad de la app">
+        <span class="tienda"><span>🤖 &nbsp;Android</span><small>Próximamente</small></span>
+        <span class="tienda"><span>🍎 &nbsp;iPhone</span><small>Próximamente</small></span>
+        <a class="boton boton-sec" href="#voz">Probar el simulador multimodal</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO (Estructura) -->
+  <section id="equipo" class="seccion contenedor">
+    <p class="etiqueta">Grupo 2</p>
+    <h2>Equipo y Historias de Usuario</h2>
+    <div class="tabla-scroll"><table>
+      <caption>Distribución del trabajo</caption>
+      <thead><tr><th scope="col">Integrante</th><th scope="col">Código</th><th scope="col">Responsabilidad</th><th scope="col">Sección</th></tr></thead>
+      <tbody>
+        <tr><td>Juan Carlos Raymundo Mendiola Morales</td><td>U20251C132</td><td>H04 · Detalle de alimento y registro de porción</td><td><a href="#detalle">Ver</a></td></tr>
+        <tr><td>Renzo</td><td>U202514302</td><td>H01 · Registro multimodal por voz e imagen</td><td><a href="#voz">Ver</a></td></tr>
+        <tr><td>Rene Victoria</td><td>U20251A560</td><td>H03 · Progreso nutricional, recomendaciones y corrección</td><td><a href="#progreso">Ver</a></td></tr>
+        <tr><td>Roddick Tejada</td><td>U202511817</td><td>Estructura e integración + Asistente HAX</td><td><a href="#inicio">Ver</a></td></tr>
+        <tr><td>Christian Alvarez</td><td>U20251F719</td><td>H02 · Consultar alimentos ricos en hierro</td><td><a href="#hierro">Ver</a></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+</main>
+
+<!-- ===================================================
+     ASISTENTE CONVERSACIONAL CONTEXTUAL ("NutriBot" - HAX)
+     Resuelve SUS Q4 (Ayuda técnica) y Q10 (Curva de aprendizaje)
+     =================================================== -->
+<button type="button" class="nutribot-toggle" id="btn-toggle-nutribot" aria-expanded="false" aria-controls="panel-nutribot">
+  🤖 NutriBot · Ayuda IA
+</button>
+
+<aside class="nutribot-panel" id="panel-nutribot" aria-label="Asistente conversacional NutriBot">
+  <div class="nutribot-header">
+    <div>
+      <strong>🤖 NutriBot · Copiloto Nutricional</strong>
+      <div class="nota" style="font-size: 0.74rem;">Orientación e ingreso asistido · HAX</div>
+    </div>
+    <button type="button" id="btn-cerrar-nutribot" style="background:none; border:none; color:var(--texto-secundario); font-size:1.2rem; cursor:pointer;" aria-label="Cerrar asistente">✕</button>
+  </div>
+  <div class="nutribot-mensajes" id="nutribot-mensajes">
+    <div class="msg-bot">
+      ¡Hola! Soy <strong>NutriBot</strong>. Puedo orientarte para usar NutriApp sin complicaciones, recomendarte alimentos con hierro o registrar/corregir comidas por ti.<br><br>
+      <span class="nota">ℹ️ Mis sugerencias son educativas y no reemplazan consulta médica.</span>
+    </div>
+  </div>
+  <div class="nutribot-sugerencias">
+    <button type="button" data-prompt="¿Qué me recomiendas comer hoy?">✨ ¿Qué como hoy?</button>
+    <button type="button" data-prompt="Registra 2 huevos con pan">🥚 Registrar desayuno</button>
+    <button type="button" data-prompt="Alimentos para prevenir anemia">🥩 Prevenir anemia</button>
+    <button type="button" data-prompt="¿Cómo corrijo un error?">✏️ ¿Cómo corrijo?</button>
+  </div>
+  <form class="nutribot-form" id="form-nutribot">
+    <input type="text" id="input-nutribot" placeholder="Escribe o pide algo (ej. Registra pollo)..." required>
+    <button type="submit" class="boton" style="padding: 0.5rem 0.85rem;">Enviar</button>
+  </form>
+</aside>
+
+<!-- Toast de retroalimentación y Recuperación ante Errores (Undo) -->
+<div class="toast-hax" id="toast-hax" role="status" aria-live="polite">
+  <span id="toast-mensaje">Acción completada</span>
+  <button type="button" class="boton boton-sec" id="btn-toast-undo" style="padding: 0.3rem 0.7rem; font-size: 0.82rem; display: none;">↩ Deshacer</button>
+</div>
+
+<footer class="pie">
+  <div class="contenedor">
+    <p><strong>NutriApp</strong> · Tu nutrición del día, simple, multimodal y transparente.</p>
+    <p>Proyecto académico vinculado al ODS 3: Salud y bienestar · Principios Human-AI Interaction aplicados.</p>
+    <p>© 2026 NutriApp – Grupo 2 · HCI for UX Design (UPC) · Simulación educativa · <a href="FUENTES.txt">Créditos de recursos</a></p>
+  </div>
+</footer>
+</body>
+</html>

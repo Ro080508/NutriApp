@@ -1,0 +1,9 @@
+NUTRIAPP – GRUPO 2 · VERSIÓN 2 (MEJORAS UX/UI + IA + PRINCIPIOS HAX)
+1. Extrae el ZIP y abre la carpeta web_site en Visual Studio Code.
+2. Abre index.html con Live Server o en tu navegador.
+3. Mejoras implementadas según evaluación SUS (60.42 -> mejora en Q2, Q4, Q5, Q6, Q8, Q9, Q10):
+   - Consistencia UI (Q6): Corrección de selectores por radio, variables CSS y flujo conectado en tiempo real.
+   - Interfaz Multimodal (Q2, Q8): Dictado por voz (Web Speech API + ejemplos), Escaneo de plato por imagen (IA Visión) e Ingreso rápido asistido.
+   - Recuperación ante errores (Q4, Q9): Chips de desambiguación rápida ("canela" vs "panela"), recálculo automático de calorías al editar gramos y botón "Deshacer (Undo)".
+   - Asistente Conversacional "NutriBot" (Q4, Q10): Copiloto contextual para orientar y registrar sin conocimientos técnicos.
+   - Recomendaciones Personalizadas Explicables (Q5, Transparencia HAX): Sugerencias dinámicas según déficit de proteínas/hierro con botón de registro en 1 clic.
